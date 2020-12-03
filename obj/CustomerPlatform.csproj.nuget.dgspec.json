@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\CodeBoxx\\Odyssey\\CustomerPlatform\\CustomerPlatform.csproj": {}
+    "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj": {}
   },
   "projects": {
-    "d:\\CodeBoxx\\Odyssey\\CustomerPlatform\\CustomerPlatform.csproj": {
+    "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\CodeBoxx\\Odyssey\\CustomerPlatform\\CustomerPlatform.csproj",
+        "projectUniqueName": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
         "projectName": "CustomerPlatform",
-        "projectPath": "d:\\CodeBoxx\\Odyssey\\CustomerPlatform\\CustomerPlatform.csproj",
+        "projectPath": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
         "packagesPath": "C:\\Users\\saade\\.nuget\\packages\\",
-        "outputPath": "d:\\CodeBoxx\\Odyssey\\CustomerPlatform\\obj\\",
+        "outputPath": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\saade\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -47,6 +47,10 @@
               "version": "[3.1.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
               "version": "[3.1.10, )"
             },
