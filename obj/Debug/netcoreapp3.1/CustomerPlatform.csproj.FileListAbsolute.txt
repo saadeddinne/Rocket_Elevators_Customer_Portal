@@ -545,3 +545,4 @@ D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netco
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\CustomerPlatform.MvcApplicationPartsAssemblyInfo.cs
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\CustomerPlatform.MvcApplicationPartsAssemblyInfo.cache
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\Razor\Views\Home\Interventions.cshtml.g.cs
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageLayout.cshtml.g.cs

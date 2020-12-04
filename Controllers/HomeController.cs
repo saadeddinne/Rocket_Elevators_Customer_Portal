@@ -97,19 +97,132 @@ namespace CustomerPlatform.Controllers
             string JSON_List4 = reader4.ReadToEnd();
 
             List<Buildings> objResponse4 = JsonConvert.DeserializeObject<List<Buildings>>(JSON_List4);
-            if (objResponse4 != null)
+
+            // Get addresses buildings for this USER
+            string template5 = "https://restapisaadeddine.azurewebsites.net/api/Adresses/{0}/address";
+
+
+            string url5 = string.Format(template5, data);
+
+            WebRequest request5 = HttpWebRequest.Create(url5);
+            WebResponse response5 = request5.GetResponse();
+            StreamReader reader5 = new StreamReader(response5.GetResponseStream());
+            string JSON_List5 = reader5.ReadToEnd();
+
+            List<Address> objResponse5 = JsonConvert.DeserializeObject<List<Address>>(JSON_List5);
+            if (objResponse5 != null)
             {
                 int count = 0;
-                foreach (Buildings e in objResponse4)
+                foreach (Address e in objResponse5)
                 {
                     count++;
 
-                    Console.WriteLine($"Element #{count}: " + e.administratorFullName);
+                    Console.WriteLine($"Element #{count}: " + e.city + " ::" + data);
                 }
             }
 
+            // get Customer Data
+            // Get addresses buildings for this USER
+            string template6 = " https://restapisaadeddine.azurewebsites.net/api/Customers/{0}";
+
+
+            string url6 = string.Format(template6, data);
+
+            WebRequest request6 = HttpWebRequest.Create(url6);
+            WebResponse response6 = request6.GetResponse();
+            StreamReader reader6 = new StreamReader(response6.GetResponseStream());
+            string JSON_List6 = reader6.ReadToEnd();
+
+            List<Customer> objResponse6 = JsonConvert.DeserializeObject<List<Customer>>(JSON_List6);
+
+            /* *
+       * ViewBag is a property – considered a dynamic object – that enables you * to share values dynamically between the controller and view within ASP.* NET MVC applications. */
+
+            // Send data via ViewBag
+
+            ViewBag.Customeremail += $"<div> {data}</div>";
+            foreach (Customer e in objResponse6)
+            {
+                ViewBag.CustomerfullName += $"<div>{e.companyContactFullName} </div>";
+                ViewBag.CustomercompanyName += $"<div>{e.companyName} </div> ";
+                ViewBag.CustomercompanyContactPhone += $"<div>{e.companyName} </div>";
+                ViewBag.CustomercompanyDescription += $"<div>{e.companyName} </div>";
+                ViewBag.CustomertechnicalAuthorityPhoneNumber += $"<div>{e.companyName} </div>";
+                ViewBag.CustomertechnicalManagerEmailService += $"<div>{e.companyName} </div>";
+                ViewBag.CustomerId = $"<div>{e.userId}</div>";
+
+            }
+
+            foreach (Batteries e in objResponse)
+            {
+                ViewBag.BatteriesId += $"<div>{e.id} </div> ";
+                ViewBag.BatteriesbuildingId += $"<div>{e.buildingId} </div> ";
+                ViewBag.BatteriesemployeeId += $"<div>{e.employeeId} </div> ";
+                ViewBag.BatteriesbatteryType += $"<div>{e.batteryType} </div> ";
+                ViewBag.BatteriesbatteryStatus += $"<div>{e.batteryStatus} </div> ";
+                ViewBag.BatteriesdateOfCommissioning += $"<div>{e.dateOfCommissioning} </div> ";
+                ViewBag.BatteriesdateOfLastInspection += $"<div>{e.dateOfLastInspection} </div>";
+                ViewBag.BatteriescertificateOfOperations += $"<div>{e.certificateOfOperations} </div>";
+                ViewBag.Batteriesnotes += $"<div>{e.notes} </div>";
+                ViewBag.Batteriesinformation += $"<div>{e.information} </div > ";
+
+            }
+            foreach (Column e in objResponse2)
+            {
+                ViewBag.ColumnId += $"<div>{e.id} </div>";
+                ViewBag.ColumnbatteryId += $"<div>{e.batteryId} </div> ";
+                ViewBag.ColumncolumnType += $"<div>{e.columnType} </div> ";
+                ViewBag.ColumncolumnStatus += $"<div>{e.columnStatus} </div> ";
+                ViewBag.ColumnnumberOfFloorsServed += $"<div>{e.numberOfFloorsServed} </div> ";
+                ViewBag.Columninformation += $"<div>{e.information} </div> ";
+                ViewBag.Columnotes += $"<div>{e.notes} </div>";
+
+            }
+
+            foreach (Elevator e in objResponse3)
+            {
+                ViewBag.ElevatorId += $"<div>{e.id} </div>";
+                ViewBag.ElevatorcolumnId += $"<div>{e.columnId} </div> ";
+                ViewBag.ElevatorserialNumber += $"<div>{e.serialNumber} </div> ";
+                ViewBag.ElevatorelevatorModel += $"<div>{e.elevatorModel} </div> ";
+                ViewBag.ElevatorelevatorType += $"<div>{e.elevatorType} </div> ";
+                ViewBag.ElevatorelevatorStatus += $"<div>{e.elevatorStatus} </div> ";
+                ViewBag.ElevatorcertificateOfInspection += $"<div>{e.certificateOfInspection} </div> ";
+                ViewBag.Elevatorinformation += $"<div>{e.information} </div> ";
+                ViewBag.Elevatornotes += $"<div>{e.notes} </div> ";
+            }
+            foreach (Buildings e in objResponse4)
+            {
+                ViewBag.Buildingsid += $"<div>{e.id}</div>";
+                ViewBag.BuildingscustomerId += $"<div>{e.customerId} </div>";
+                ViewBag.BuildingsadministratorFullName += $"<div>{e.administratorFullName} </div>";
+                ViewBag.BuildingsadministratorEmail += $"<div>{e.administratorEmail} </div> ";
+                ViewBag.BuildingsadministratorPhoneNumber += $"<div>{e.administratorPhoneNumber} </div> ";
+                ViewBag.BuildingstechnicalContactFullName += $"<div>{e.administratorFullName} </div> ";
+                ViewBag.BuildingstechnicalContactEmail += $"<div>{e.technicalContactEmail} </ div > ";
+                ViewBag.BuildingstechnicalContactPhone += $"<div>{e.technicalContactPhone} </div> ";
+            }
+            foreach (Address e in objResponse5)
+            {
+                ViewBag.Addressid += $"<div>{e.id} </div> ";
+                ViewBag.AddressnumberAndStreet += $"<div>{e.numberAndStreet} </div> ";
+                ViewBag.AddresssuiteOrApartment += $"<div>{e.suiteOrApartment}</div>";
+                ViewBag.Addresscity += $"<div>{e.city}</div>";
+                ViewBag.AddresspostalCode += $"<div>{e.postalCode}</div>";
+                ViewBag.Addresscountry += $"<div>{e.country}</div>";
+                ViewBag.Addressnotes += $"<div>{e.notes}</div>";
+                ViewBag.Addresslatitude += $"<div>{e.latitude}</div>";
+                ViewBag.Addresslongitude += $"<div>{e.longitude}</div>";
+            }
+
+
+
             return View();
         }
+
+
+
+
 
         public class Batteries
         {
@@ -191,6 +304,47 @@ namespace CustomerPlatform.Controllers
             public List<object> buildingDetails { get; set; }
         }
 
+        // define Address for json
+        public class Address
+        {
+            public int id { get; set; }
+            public object buildingId { get; set; }
+            public int customerId { get; set; }
+            public string typeOfAddress { get; set; }
+            public string status { get; set; }
+            public string entity { get; set; }
+            public string numberAndStreet { get; set; }
+            public string suiteOrApartment { get; set; }
+            public string city { get; set; }
+            public string postalCode { get; set; }
+            public string country { get; set; }
+            public string notes { get; set; }
+            public DateTime createdAt { get; set; }
+            public DateTime updatedAt { get; set; }
+            public double latitude { get; set; }
+            public double longitude { get; set; }
+            public object building { get; set; }
+            public object customer { get; set; }
+        }
+
+        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+        public class Customer
+        {
+            public int id { get; set; }
+            public int userId { get; set; }
+            public string companyName { get; set; }
+            public string companyContactFullName { get; set; }
+            public string companyContactPhone { get; set; }
+            public string companyContactEmail { get; set; }
+            public string companyDescription { get; set; }
+            public string technicalAuthorityFullName { get; set; }
+            public string technicalAuthorityPhoneNumber { get; set; }
+            public string technicalManagerEmailService { get; set; }
+            public DateTime createdAt { get; set; }
+            public DateTime updatedAt { get; set; }
+            public int addressId { get; set; }
+            public List<object> addresses { get; set; }
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
