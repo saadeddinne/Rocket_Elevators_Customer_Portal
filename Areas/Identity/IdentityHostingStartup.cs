@@ -15,12 +15,12 @@ namespace CustomerPlatform.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
-                services.AddDbContext<CustomerPlatformContext>(options =>
-                    options.UseSqlServer(
-                        context.Configuration.GetConnectionString("CustomerPlatformContextConnection")));
+            builder.ConfigureServices((context, services) =>
+            {
+               
 
-                services.AddDefaultIdentity<CustomerPlatformUser>(options => {
+                services.AddDefaultIdentity<CustomerPlatformUser>(options =>
+                {
                     options.Password.RequireLowercase = false;
                     options.Password.RequireUppercase = false;
                     options.Password.RequireNonAlphanumeric = false;

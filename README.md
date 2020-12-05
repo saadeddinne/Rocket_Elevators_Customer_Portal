@@ -12,7 +12,11 @@ Implementation of a portal to the customers using the framwork Aspnet core 3.1
 You can use one of the following users to access:
 
 ```ssh
+margarete@beatty-corwin.net
+erick@emard.com
+pamela.doyle@mann.biz
 
+pasword: 123456
 ```
 
 ## License
