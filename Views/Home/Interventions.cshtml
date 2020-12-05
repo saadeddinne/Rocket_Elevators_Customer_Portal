@@ -2,3 +2,225 @@
     ViewData["Title"] = "Interventions";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+<div class="text-center">
+    <h1 class="text-primary display-4">REQUEST FOR INTERVENTION</h1>
+</div>
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Create intervention</h3>
+
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form name="formintervention" method="post" id="formintervention">
+                        <div class="card-body">
+                            <div class="form-group ">
+                                <label for="building">Building</label>
+                                <select id="building" required class="form-control pointer" name="building_id">
+                                    <option selected value="0">--- Select ---</option>
+                                    @Html.Raw( ViewBag.BuldingSos )
+                                </select>
+                            </div>
+                            <div class="form-group battery">
+                                <label for="battery">Battery</label>
+                                <select id="battery" required class="form-control pointer" name="battery_id">
+                                    <option selected value="0">--- Select ---</option>
+                                    @Html.Raw(ViewBag.BatterySos)
+                                </select>
+                            </div>
+                            <div class="form-group column">
+
+                                <label for="column">Column</label>
+                                <select id="column" required class="form-control pointer" name="column_id">
+                                    <option selected value="0">--- Select ---</option>
+                                    @Html.Raw( ViewBag.ColumnSos)
+                                </select>
+                            </div>
+                            <div class="form-group  elevator">
+                                <label for="elevator">Elevator</label>
+                                <select id="elevator" required class="form-control pointer" name="elevator_id">
+                                    <option selected value="0">--- Select ---</option>
+                                    @Html.Raw( ViewBag.ElevatorSos)
+                                </select>
+                            </div>
+                            <div class="form-group description">
+                                <label>Description</label>
+                                <textarea class="form-control" id="description" rows="3"
+                                    placeholder="Enter ..."></textarea>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer btnform">
+                            <button class="btn btn-primary btn-lg btn-block" id="sendbtn">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+@section Scripts{
+   
+    <script>
+        @* hide every single input and desabled *@
+       
+      
+       
+        $(".battery").hide();
+        $(".column").hide();
+        $(".elevator").hide();
+        $(".description").hide();
+        $(".btnform").hide();
+    @* Check battery and control others *@
+    $("#battery").prop("disabled", true);
+   $("#building").change(function () {
+
+    var  building= $(this).val();
+   
+    if (building) {
+   
+    $("#battery").prop("disabled", false);
+     $(".battery").show();
+
+    } else 
+        {
+		 $("#battery").prop("disabled", true); 
+        }
+       
+});
+  
+   $("#battery").change(function () {
+
+    var  battery= $(this).val();
+   
+    if (building) {
+   
+    $("#column").prop("disabled", false);
+     $(".column").show();
+
+    } else 
+        {
+		 $("#column").prop("disabled", true); 
+        }
+});
+
+   $("#column").change(function () {
+
+    var  column= $(this).val();
+   
+    if (column) {
+   
+    $("#elevator").prop("disabled", false);
+     $(".elevator").show();
+
+    } else 
+        {
+		 $("#elevator").prop("disabled", true); 
+        }
+});
+
+
+   $("#elevator").change(function () {
+
+    var  elevator= $(this).val();
+   
+    if (elevator) {
+   
+    $("#description").prop("disabled", false);
+     $(".description").show();
+     $(".btnform").show();
+
+
+    } else 
+        {
+		 $("#description").prop("disabled", true); 
+          $(".btnform").hide();
+        }
+});
+
+$(document).ready(function() {
+  var choice = document.getElementById("building");
+  choice.addEventListener("change", building);
+});
+
+
+// Battery dropDown
+$(document).ready(function() {
+  var choice = document.getElementById("battery");
+  choice.addEventListener("change", battery);
+});
+
+var battery = function() {
+  var choice = document.getElementById("battery").value;
+  if (choice) {
+    $(".column").show();
+    
+  }else if(choice =="") {
+    $(".column").hide();
+    $("#column").prop("disabled", true);
+    $(".elevator").hide();
+    $("#elevator").prop("disabled", true);
+    }
+};
+// Column drop down menu
+$(document).ready(function() {
+  var choice = document.getElementById("column");
+  choice.addEventListener("change", column);
+});
+
+var column = function() {
+  var choice = document.getElementById("column").value;
+  if (choice) {
+    $(".elevator").show();
+  } else if(choice ==""){
+    $(".elevator").hide();
+    $("#elevator").prop("disabled", true);
+  }
+};
+
+ $("#formintervention").submit(function(e) {
+    e.preventDefault(); // prevent actual form submit
+    var form = $(this);
+    console.log(form);
+    var url = "https://restapisaadeddine.azurewebsites.net/api/GetAll"; //get submit url [replace url here if desired]
+    $.ajax({
+         type: "POST",
+         url: url,
+         data: JSON.stringify(form), // serializes form input
+         success: function(data){
+             console.log(data);
+              
+         }
+    });
+    window.location.href = "/home/privacy";
+}); 
+
+
+
+
+
+    
+
+     </script>
+}

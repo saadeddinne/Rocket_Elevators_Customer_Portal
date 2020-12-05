@@ -541,8 +541,24 @@ D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netco
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\Razor\Views\Home\Interventions.cshtml.g.cs
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageLayout.cshtml.g.cs
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\Razor\Views\Home\Products.cshtml.g.cs
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\CustomerPlatform2020 - Web Deploy\profile.arm.json
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Azure.Core.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Azure.Identity.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.CustomerPlatform2020 - Web Deploy.json
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\CustomerPlatform2020 - Web Deploy\mssql2.arm.json
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Properties\ServiceDependencies\CustomerPlatform2020 - Web Deploy\secrets1.arm.json
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Azure.Extensions.AspNetCore.Configuration.Secrets.dll
+D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\bin\Debug\netcoreapp3.1\Azure.Security.KeyVault.Secrets.dll
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\CustomerPlatform.csproj.CoreCompileInputs.cache
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\CustomerPlatform.MvcApplicationPartsAssemblyInfo.cs
 D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\CustomerPlatform.MvcApplicationPartsAssemblyInfo.cache
-D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\Razor\Views\Home\Interventions.cshtml.g.cs
-D:\CodeBoxx\Odyssey\Week 11\version final jeudi\CustomerPlatform\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageLayout.cshtml.g.cs

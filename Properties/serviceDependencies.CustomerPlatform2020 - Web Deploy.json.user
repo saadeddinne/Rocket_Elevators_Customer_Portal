@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "restored": true,
+      "restoreTime": "2020-12-05T02:30:16.2941087Z"
+    },
+    "secrets1": {
+      "restored": true,
+      "restoreTime": "2020-12-05T02:30:11.2671096Z"
+    }
+  },
+  "parameters": {
+    "mssql2.subscriptionId": {
+      "Type": "subscription",
+      "Value": "a3916aff-ae44-471c-98b9-d9b9b5dc4c8a"
+    },
+    "mssql2.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "CodeBoxxDev"
+    },
+    "secrets1.resourceGroupName": {
+      "Type": "resourceGroup",
+      "Value": "CodeBoxxDev"
+    },
+    "secrets1.subscriptionId": {
+      "Type": "subscription",
+      "Value": "a3916aff-ae44-471c-98b9-d9b9b5dc4c8a"
+    }
+  }
+}

@@ -1,9 +1,89 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<section class="content">
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>@Html.Raw(ViewBag.nbattery)</h3>
+
+                            <p>Number of batteries</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>@Html.Raw(ViewBag.nbcolumn)<sup style="font-size: 20px">%</sup></h3>
+
+                            <p>Number of columns</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-stats-bars"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                        <div class="inner">
+                            <h3> @Html.Raw(ViewBag.nbelevator)</h3>
+
+                            <p>Number of elevators</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-person-add"></i>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- ./col -->
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+
+                </div>
+                <!-- ./col -->
+            </div>
+            <!-- /.row -->
+            <!-- Main row -->
+            <div class="row">
+                <!-- Left col -->
+
+
+                <!-- /.Left col -->
+                <!-- right col (We are only adding the ID to make the widgets sortable)-->
+
+                <!-- right col -->
+            </div>
+            <!-- /.row (main row) -->
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Hello, @Html.Raw(User.Identity.Name)!</h1>
+        <p class="lead">Taking the stairs to your office can be quite a tedious task when your building has many
+            stories. That is why, we, at Rocket Elevators, offer you an outstanding amount of corporate models to choose
+            from !</p>
+        <hr class="my-4">
+        <p>Rocket Elevators has gained many prices over the years, notably the 2020 golden gear award. Read more below !
+        </p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="https://saadeddine.io/" role="button">Learn more</a>
+        </p>
     </div>
-    </div>
+    <!-- /.content -->
+</div>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj": {}
+    "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj": {}
   },
   "projects": {
-    "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj": {
+    "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
+        "projectUniqueName": "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
         "projectName": "CustomerPlatform",
-        "projectPath": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
+        "projectPath": "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
         "packagesPath": "C:\\Users\\saade\\.nuget\\packages\\",
-        "outputPath": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\obj\\",
+        "outputPath": "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\saade\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,6 +38,18 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Azure.Extensions.AspNetCore.Configuration.Secrets": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.1.1, )"
+            },
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.10, )"

@@ -30,6 +30,65 @@ namespace CustomerPlatform.Controllers
 
         public IActionResult Index()
         {
+            string template1 = "https://restapisaadeddine.azurewebsites.net/api/Batteries/{0}/costumer";
+
+            string data = User.Identity.Name;
+            string url1 = string.Format(template1, data);
+
+            WebRequest request = HttpWebRequest.Create(url1);
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string Customer_JSON_List = reader.ReadToEnd();
+
+            List<Batteries> objResponse =
+    JsonConvert.DeserializeObject<List<Batteries>>(Customer_JSON_List);
+
+            // Get columns
+            string template2 = "https://restapisaadeddine.azurewebsites.net/api/Columns/{0}/column";
+
+            string url2 = string.Format(template2, data);
+
+            WebRequest request2 = HttpWebRequest.Create(url2);
+            WebResponse response2 = request2.GetResponse();
+            StreamReader reader2 = new StreamReader(response2.GetResponseStream());
+            string JSON_List2 = reader2.ReadToEnd();
+
+            List<Column> objResponse2 = JsonConvert.DeserializeObject<List<Column>>(JSON_List2);
+
+            // Get all Elevators
+            string template3 = "https://restapisaadeddine.azurewebsites.net/api/Elevators/{0}/elevator";
+
+            string url3 = string.Format(template3, data);
+
+            WebRequest request3 = HttpWebRequest.Create(url3);
+            WebResponse response3 = request3.GetResponse();
+            StreamReader reader3 = new StreamReader(response3.GetResponseStream());
+            string JSON_List3 = reader3.ReadToEnd();
+
+            List<Elevator> objResponse3 = JsonConvert.DeserializeObject<List<Elevator>>(JSON_List3);
+            var nbattery = 0;
+            foreach (Batteries e in objResponse)
+            {
+                nbattery++;
+                ViewBag.BatterySos += $"'{e.batteryType}'";
+            }
+            ViewBag.nbattery = nbattery;
+            var nbcolumn = 0;
+            foreach (Column e in objResponse2)
+            {
+                nbcolumn++;
+                ViewBag.ColumnSos += $"<option value='{e.id}' name='{e.batteryId}' >Column : {e.id} </option>";
+
+            }
+            ViewBag.nbcolumn = nbcolumn;
+            var nbelevator = 0;
+            foreach (Elevator e in objResponse3)
+            {
+                nbelevator++;
+                ViewBag.ElevatorSos += $"<option value='{e.id}' name='{e.columnId}' >Elevator : {e.id} </option>";
+            }
+
+            ViewBag.nbelevator = nbelevator;
             return View();
         }
 
@@ -37,6 +96,71 @@ namespace CustomerPlatform.Controllers
         {
             return View();
         }
+        public IActionResult Products()
+        {
+            string template1 = "https://restapisaadeddine.azurewebsites.net/api/Batteries/{0}/costumer";
+
+            string data = User.Identity.Name;
+            string url1 = string.Format(template1, data);
+
+            WebRequest request = HttpWebRequest.Create(url1);
+            WebResponse response = request.GetResponse();
+            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string Customer_JSON_List = reader.ReadToEnd();
+
+            List<Batteries> objResponse =
+    JsonConvert.DeserializeObject<List<Batteries>>(Customer_JSON_List);
+
+            // Get columns
+            string template2 = "https://restapisaadeddine.azurewebsites.net/api/Columns/{0}/column";
+
+            string url2 = string.Format(template2, data);
+
+            WebRequest request2 = HttpWebRequest.Create(url2);
+            WebResponse response2 = request2.GetResponse();
+            StreamReader reader2 = new StreamReader(response2.GetResponseStream());
+            string JSON_List2 = reader2.ReadToEnd();
+
+            List<Column> objResponse2 = JsonConvert.DeserializeObject<List<Column>>(JSON_List2);
+
+            // Get all Elevators
+            string template3 = "https://restapisaadeddine.azurewebsites.net/api/Elevators/{0}/elevator";
+
+            string url3 = string.Format(template3, data);
+
+            WebRequest request3 = HttpWebRequest.Create(url3);
+            WebResponse response3 = request3.GetResponse();
+            StreamReader reader3 = new StreamReader(response3.GetResponseStream());
+            string JSON_List3 = reader3.ReadToEnd();
+
+            List<Elevator> objResponse3 = JsonConvert.DeserializeObject<List<Elevator>>(JSON_List3);
+            var nbattery = 0;
+            foreach (Batteries e in objResponse)
+            {
+                nbattery++;
+                ViewBag.BatterySos += $"'{e.batteryType}'";
+            }
+            ViewBag.nbattery = nbattery;
+            var nbcolumn = 0;
+            foreach (Column e in objResponse2)
+            {
+                nbcolumn++;
+                ViewBag.ColumnSos += $"<option value='{e.id}' name='{e.batteryId}' >Column : {e.id} </option>";
+
+            }
+            ViewBag.nbcolumn = nbcolumn;
+            var nbelevator = 0;
+            foreach (Elevator e in objResponse3)
+            {
+                nbelevator++;
+                ViewBag.ElevatorSos += $"<option value='{e.id}' name='{e.columnId}' >Elevator : {e.id} </option>";
+            }
+
+            ViewBag.nbelevator = nbelevator;
+            return View();
+        }
+
+
         public IActionResult Interventions()
         {
             // https://restapisaadeddine.azurewebsites.net/api/Batteries/{email}/costumer
@@ -143,64 +267,34 @@ namespace CustomerPlatform.Controllers
             ViewBag.Customeremail += $"<div> {data}</div>";
             foreach (Customer e in objResponse6)
             {
+                ViewBag.customerID += $"<div>{e.id} </div>";
                 ViewBag.CustomerfullName += $"<div>{e.companyContactFullName} </div>";
                 ViewBag.CustomercompanyName += $"<div>{e.companyName} </div> ";
                 ViewBag.CustomercompanyContactPhone += $"<div>{e.companyName} </div>";
-                ViewBag.CustomercompanyDescription += $"<div>{e.companyName} </div>";
-                ViewBag.CustomertechnicalAuthorityPhoneNumber += $"<div>{e.companyName} </div>";
-                ViewBag.CustomertechnicalManagerEmailService += $"<div>{e.companyName} </div>";
-                ViewBag.CustomerId = $"<div>{e.userId}</div>";
+
 
             }
 
             foreach (Batteries e in objResponse)
             {
-                ViewBag.BatteriesId += $"<div>{e.id} </div> ";
-                ViewBag.BatteriesbuildingId += $"<div>{e.buildingId} </div> ";
-                ViewBag.BatteriesemployeeId += $"<div>{e.employeeId} </div> ";
-                ViewBag.BatteriesbatteryType += $"<div>{e.batteryType} </div> ";
-                ViewBag.BatteriesbatteryStatus += $"<div>{e.batteryStatus} </div> ";
-                ViewBag.BatteriesdateOfCommissioning += $"<div>{e.dateOfCommissioning} </div> ";
-                ViewBag.BatteriesdateOfLastInspection += $"<div>{e.dateOfLastInspection} </div>";
-                ViewBag.BatteriescertificateOfOperations += $"<div>{e.certificateOfOperations} </div>";
-                ViewBag.Batteriesnotes += $"<div>{e.notes} </div>";
-                ViewBag.Batteriesinformation += $"<div>{e.information} </div > ";
-
+                ViewBag.BatterySos += $"<option value='{e.id}' name='{e.batteryType}' >Battery : {e.id} </option>";
             }
             foreach (Column e in objResponse2)
             {
-                ViewBag.ColumnId += $"<div>{e.id} </div>";
-                ViewBag.ColumnbatteryId += $"<div>{e.batteryId} </div> ";
-                ViewBag.ColumncolumnType += $"<div>{e.columnType} </div> ";
-                ViewBag.ColumncolumnStatus += $"<div>{e.columnStatus} </div> ";
-                ViewBag.ColumnnumberOfFloorsServed += $"<div>{e.numberOfFloorsServed} </div> ";
-                ViewBag.Columninformation += $"<div>{e.information} </div> ";
-                ViewBag.Columnotes += $"<div>{e.notes} </div>";
+                ViewBag.ColumnSos += $"<option value='{e.id}' name='{e.batteryId}' >Column : {e.id} </option>";
 
             }
 
             foreach (Elevator e in objResponse3)
             {
-                ViewBag.ElevatorId += $"<div>{e.id} </div>";
-                ViewBag.ElevatorcolumnId += $"<div>{e.columnId} </div> ";
-                ViewBag.ElevatorserialNumber += $"<div>{e.serialNumber} </div> ";
-                ViewBag.ElevatorelevatorModel += $"<div>{e.elevatorModel} </div> ";
-                ViewBag.ElevatorelevatorType += $"<div>{e.elevatorType} </div> ";
-                ViewBag.ElevatorelevatorStatus += $"<div>{e.elevatorStatus} </div> ";
-                ViewBag.ElevatorcertificateOfInspection += $"<div>{e.certificateOfInspection} </div> ";
-                ViewBag.Elevatorinformation += $"<div>{e.information} </div> ";
-                ViewBag.Elevatornotes += $"<div>{e.notes} </div> ";
+
+                ViewBag.ElevatorSos += $"<option value='{e.id}' name='{e.columnId}' >Elevator : {e.id} </option>";
             }
             foreach (Buildings e in objResponse4)
             {
-                ViewBag.Buildingsid += $"<div>{e.id}</div>";
-                ViewBag.BuildingscustomerId += $"<div>{e.customerId} </div>";
-                ViewBag.BuildingsadministratorFullName += $"<div>{e.administratorFullName} </div>";
-                ViewBag.BuildingsadministratorEmail += $"<div>{e.administratorEmail} </div> ";
-                ViewBag.BuildingsadministratorPhoneNumber += $"<div>{e.administratorPhoneNumber} </div> ";
-                ViewBag.BuildingstechnicalContactFullName += $"<div>{e.administratorFullName} </div> ";
-                ViewBag.BuildingstechnicalContactEmail += $"<div>{e.technicalContactEmail} </ div > ";
-                ViewBag.BuildingstechnicalContactPhone += $"<div>{e.technicalContactPhone} </div> ";
+
+
+                ViewBag.BuldingSos += $"<option value='{e.id}' name='{e.id}' >Bulding : {e.administratorFullName} </option>";
             }
             foreach (Address e in objResponse5)
             {
@@ -221,7 +315,14 @@ namespace CustomerPlatform.Controllers
         }
 
 
+        // sending form to api
 
+        // public async Task<IActionResult> InterventionToDatabaseAsync(int? building, int? battery, int? column, int? elevator, string description)
+        // {
+
+
+        //     // return RedirectToAction("Index");
+        // }
 
 
         public class Batteries
