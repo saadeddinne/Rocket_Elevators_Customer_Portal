@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LfQkxl0VhGjUda1mdmrO+uaSJJvlv/djNEICMY/HwQIXMKyLvqX1oH5UvayCtWkG5TyuxqNOqJUPEbGDVxoXdA==",
+  "dgSpecHash": "lxThnF0YR++1DkT1jWmUVtbD2r8Zcy6GLdM6+o5WUQCdClbh+3f7CTS5xIbk0CDbETK9OUdeKTlLfAIwUkV31w==",
   "success": true,
-  "projectFilePath": "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
+  "projectFilePath": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\saade\\.nuget\\packages\\azure.core\\1.0.2\\azure.core.1.0.2.nupkg.sha512",
     "C:\\Users\\saade\\.nuget\\packages\\azure.extensions.aspnetcore.configuration.secrets\\1.0.0\\azure.extensions.aspnetcore.configuration.secrets.1.0.0.nupkg.sha512",

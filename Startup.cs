@@ -27,8 +27,8 @@ namespace CustomerPlatform
         {
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddDbContext<CustomerPlatformContext>(options =>
-              options.UseSqlServer(Configuration.GetConnectionString("CustomerPlatformContextConnection")));
+            services.AddDbContext<CustomerPlatformContext>(
+          options => options.UseSqlServer("name=ConnectionStrings:CustomerPlatformContextConnection"));
 
 
         }

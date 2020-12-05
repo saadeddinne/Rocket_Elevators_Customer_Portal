@@ -9467,11 +9467,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
+      "projectUniqueName": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
       "projectName": "CustomerPlatform",
-      "projectPath": "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
+      "projectPath": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\CustomerPlatform.csproj",
       "packagesPath": "C:\\Users\\saade\\.nuget\\packages\\",
-      "outputPath": "d:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\obj\\",
+      "outputPath": "D:\\CodeBoxx\\Odyssey\\Week 11\\version final jeudi\\CustomerPlatform\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\saade\\AppData\\Roaming\\NuGet\\NuGet.Config",
